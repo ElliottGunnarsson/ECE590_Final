@@ -1,51 +1,38 @@
-Example Elma Project
-===
+- Name: Elliott Gunnarsson
+- Class : ECE590
+- Quater : Winter 2019
+- Project: Real Time Strategy Engine
 
-[Elma](http://klavinslab.org/elma) is an event loop manager designed to teach embedded and reactive systems programming. This repository contains an example Elma project, showing how to use many Elma features, as well as illustrating how to arrange the files and directories in an Elma project.
+- Description :
+This project will be a game engine for real time strategy (RTS) games. It will be based on the event loop manager but will have added features for...
+1. user input (UI)
+1. artificial intenigence (AI)
+1. coordinates (Coords)
+1. Graphical user interface (GUI)
 
-The source code for this project is available [on github](https://github.com/klavinslab/elma_project).
+Milestones                                                          
+- Timeframe         
+- Completion
+1. Set up tests and compile code with basic use cases               
+- 3-12-2019         
+- 20%
+1. Implement UI, AI, and Coords                                     
+- 3-14-2019         
+- 40%
+1. Implement GUI                                                    
+- 3-16-2019         
+- 60%
+1. Document all additions with Doxygen notation                     
+- 3-18-2019         
+- 80%
+1. Complete docker install guide and quickstart instruction set     
+- 3-20-2019         
+- 100%
+1. Release new RTS as an executable                                 
+- 3-22-2019         
+- 110% - stretch goal
 
-Installation
----
-
-    git clone https://github.com/klavinslab/elma_project.git
-    cd elma_project
-    docker run -v $PWD:/source -it klavins/elma:latest bash
-    make
-    make docs
 
 
-Execution
----
-To run the stopwatch, type
 
-    bin/stopwatch
 
-The stopwatch is controlled via the keyboard, via these keys:
-- **s**: Start or stop
-- **l**: Lap
-- **r**: Reset
-- **q**: Quit
-
-Testing
----
-To run tests, do
-```bash
-bin/test
-```
-
-Architecture
----
-Describe how your project was designed, what choices you made, how things are organized, etc.
-
-Results
----
-Describe the results of testing and running your code. Include visuals when possible.
-
-Acknowledgements
----
-Mention anyone who helped you and how.
-
-References
----
-List all libraries, articles, stack overflow answers, etc. that you used to get your code working.
