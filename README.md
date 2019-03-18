@@ -39,7 +39,8 @@ Progress report
 ===
 - made new repo as a fork of elma_project
 - watched my daughter grow up.
-- I'm sitting down tonight to start the project
+- Put together an idea of the bare esencialls for basic use case.
+- once bare essencials are working the rest is an expansive effort.
 - Expecting to work heavily Wednesday Thursday Friday as I do not have work or any other oblegations those days.
 
 

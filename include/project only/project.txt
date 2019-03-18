@@ -1,0 +1,22 @@
+
+state machines
+
+workers
+
+states
+working
+idle
+dead
+
+transitions
+start idle
+put to work
+stop working
+die - working
+die - idle
+
+chanlles
+resource
+
+event
+buy
