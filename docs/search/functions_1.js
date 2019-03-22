@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['exit',['exit',['../classstopwatch_1_1OffState.html#a01d01fba6059ab3581c243d0b6d6c19e',1,'stopwatch::OffState::exit()'],['../classstopwatch_1_1OnState.html#a248f5a7a3dfb6ae2d8e268095f220886',1,'stopwatch::OnState::exit()']]]
+  ['clear_5fcollisions',['clear_collisions',['../classoverlord_1_1Minion.html#a422658c77ab763af1b26ec90fdb3422b',1,'overlord::Minion']]],
+  ['colide',['Colide',['../classoverlord_1_1Colide.html#aebc5cc0e1dff59dad4fc186f838433bf',1,'overlord::Colide']]],
+  ['collisions',['collisions',['../classoverlord_1_1Minion.html#ac66450f79ab1707451030db162922e7e',1,'overlord::Minion']]]
 ];

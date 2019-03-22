@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userinterface',['UserInterface',['../classstopwatch_1_1UserInterface.html',1,'stopwatch']]]
+  ['idle',['Idle',['../classoverlord_1_1Idle.html',1,'overlord']]]
 ];

@@ -91,36 +91,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ncurses.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;stopwatch.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestopwatch.html">stopwatch</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> main() {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Manager m;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classstopwatch_1_1StopWatch.html">StopWatch</a> <a class="code" href="namespacestopwatch.html">stopwatch</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classstopwatch_1_1UserInterface.html">UserInterface</a> ui(stopwatch);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;minion.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceoverlord.html">overlord</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">int</span> main() {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//create a manager to update the game pices</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Manager m;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m.schedule(ui, 10_ms)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;     .schedule(stopwatch, 10_ms)     </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;     .init()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     .run();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    endwin();     </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;     </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="namespacestopwatch_html"><div class="ttname"><a href="namespacestopwatch.html">stopwatch</a></div><div class="ttdef"><b>Definition:</b> <a href="off_8h_source.html#l00006">off.h:6</a></div></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//create your army of minions with individual stats</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> Peter(std::make_tuple(5,10),       <span class="comment">//starting position</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 1,                            <span class="comment">//attack</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                 1,                            <span class="comment">//defence</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 1,                            <span class="comment">//efficientcy</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 1,                            <span class="comment">//speed</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                 1);                           <span class="comment">//reach</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> Cottontail(std::make_tuple(15,10),  <span class="comment">//starting position</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                 1,                            <span class="comment">//attack</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                 1,                            <span class="comment">//defence</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                 1,                            <span class="comment">//efficientcy</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                 1,                            <span class="comment">//speed</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                 1);                           <span class="comment">//reach</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> Benjamin(std::make_tuple(25,10),    <span class="comment">//starting position</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                 1,                            <span class="comment">//attack</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                 1,                            <span class="comment">//defence</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                 1,                            <span class="comment">//efficientcy</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 1,                            <span class="comment">//speed</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 1);                           <span class="comment">//reach</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> Lily(std::make_tuple(35,10),        <span class="comment">//starting position</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                 1,                            <span class="comment">//attack</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                 1,                            <span class="comment">//defence</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                 1,                            <span class="comment">//efficientcy</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                 1,                            <span class="comment">//speed</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                 1);                           <span class="comment">//reach</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> Flopsy(std::make_tuple(43,10),      <span class="comment">//starting position</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                 1,                            <span class="comment">//attack</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                 1,                            <span class="comment">//defence</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                 1,                            <span class="comment">//efficientcy</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                 1,                            <span class="comment">//speed</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                 1);                           <span class="comment">//reach</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//add the addresses to a pointer vector</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;Minion*&gt; _minions = {&amp;Peter,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    &amp;Cottontail,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                    &amp;Benjamin,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                    &amp;Lily,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                    &amp;Flopsy};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//create the user interfave</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classoverlord_1_1Overlord.html">Overlord</a> ov(_minions);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//schedule all your minions or they won&#39;t update</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;_minions.size();i++){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        m.schedule(*_minions[i], 100_ms);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//schedule the overlord and run the game</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m.schedule(ov, 100_ms)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;     .init()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;     .run();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    endwin();     </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="ttc" id="classoverlord_1_1Overlord_html"><div class="ttname"><a href="classoverlord_1_1Overlord.html">overlord::Overlord</a></div><div class="ttdoc">An Overlord class, that inherits from Process. </div><div class="ttdef"><b>Definition:</b> <a href="overlord_8h_source.html#l00018">overlord.h:18</a></div></div>
 <div class="ttc" id="namespacestd_1_1chrono_html"><div class="ttname"><a href="namespacestd_1_1chrono.html">chrono</a></div></div>
-<div class="ttc" id="classstopwatch_1_1UserInterface_html"><div class="ttname"><a href="classstopwatch_1_1UserInterface.html">stopwatch::UserInterface</a></div><div class="ttdoc">A user interface for the a StopWatch object. </div><div class="ttdef"><b>Definition:</b> <a href="user__interface_8h_source.html#l00015">user_interface.h:15</a></div></div>
-<div class="ttc" id="classstopwatch_1_1StopWatch_html"><div class="ttname"><a href="classstopwatch_1_1StopWatch.html">stopwatch::StopWatch</a></div><div class="ttdoc">A stop watch class, that inherits from StateMachine. </div><div class="ttdef"><b>Definition:</b> <a href="stopwatch_8h_source.html#l00016">stopwatch.h:16</a></div></div>
+<div class="ttc" id="namespaceoverlord_html"><div class="ttname"><a href="namespaceoverlord.html">overlord</a></div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00010">minion.h:10</a></div></div>
 <div class="ttc" id="namespaceelma_html"><div class="ttname"><a href="namespaceelma.html">elma</a></div></div>
+<div class="ttc" id="classoverlord_1_1Minion_html"><div class="ttname"><a href="classoverlord_1_1Minion.html">overlord::Minion</a></div><div class="ttdoc">A Minion class, that inherits from StateMachine. </div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00017">minion.h:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 14 2019 18:49:22 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 22 2019 17:30:43 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

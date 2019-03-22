@@ -44,3 +44,6 @@ Progress report
 - Expecting to work heavily Wednesday Thursday Friday as I do not have work or any other oblegations those days.
 
 
+
+
+docker run -v /c/Users/ellio/Documents/Embedded_Applications/ECE590_Final:/source -it klavins/elma:latest bash

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reset',['reset',['../classstopwatch_1_1StopWatch.html#a1c0dcc57c615559f24bc9f8759271a9d',1,'stopwatch::StopWatch']]]
+  ['fighting',['Fighting',['../classoverlord_1_1Fighting.html#a7b39f9c5c419c879958c1b2769778ba3',1,'overlord::Fighting']]]
 ];

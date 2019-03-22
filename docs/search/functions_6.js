@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['update',['update',['../classstopwatch_1_1UserInterface.html#a7c9acd9ad089bbd6d0ca371a14cd82fa',1,'stopwatch::UserInterface']]],
-  ['userinterface',['UserInterface',['../classstopwatch_1_1UserInterface.html#a3567885d49505d1f4c0c6fff3bf3d386',1,'stopwatch::UserInterface']]]
+  ['idle',['Idle',['../classoverlord_1_1Idle.html#a407d58702f616c3ee64ed942f9f9e53f',1,'overlord::Idle']]],
+  ['init',['init',['../classoverlord_1_1Overlord.html#ab41ca65afe90aca4bb29ffbb2eb1c7e0',1,'overlord::Overlord']]]
 ];
