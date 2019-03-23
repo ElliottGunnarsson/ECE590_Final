@@ -41,46 +41,46 @@ void Fighting::during() {
 
 Minion& Select:: minion() { return (Minion&) state_machine(); }
 void Select::entry(const Event& e) {
-    if ( e.name() == "idle_check" & !minion().selected() ){
-        emit(Event("idle_check"));
-        emit(Event("idle"));
-    }else if ( e.name() == "travel_check" & !minion().selected() ){
-        emit(Event("travel_check"));
-        emit(Event("travel"));
-    }else if ( e.name() == "fight_check" & !minion().selected() ){
-        emit(Event("fight_check"));
-        emit(Event("idle"));
+    if ( e.name() == "idle_select" & !minion().selected() ){
+        emit(Event("idle_select"));
+        emit(Event("select_idle"));
+    }else if ( e.name() == "travel_select" & !minion().selected() ){
+        emit(Event("travel_select"));
+        emit(Event("select_travel"));
+    }else if ( e.name() == "fight_select" & !minion().selected() ){
+        emit(Event("fight_select"));
+        emit(Event("select_fight"));
     }
 }
 void Select::exit(const Event& e) {}
 
 Minion& Colide:: minion() { return (Minion&) state_machine(); }
 void Colide::entry(const Event& e) {
-    if ( e.name() == "idle_colide" & !minion().selected_colide() ){
-        emit(Event("idle_colide"));
-        emit(Event("colide_idle"));
-    }else if ( e.name() == "travel_colide" & !minion().selected_colide() ){
-        emit(Event("travel_colide"));
-        emit(Event("colide_travel"));
-    }else if ( e.name() == "select_colide" & !minion().selected_colide() ){
+    if ( e.name() == "idle_collide" & !minion().selected_colide() ){
+        emit(Event("idle_collide"));
+        emit(Event("collide_idle"));
+    }else if ( e.name() == "travel_collide" & !minion().selected_colide() ){
+        emit(Event("travel_collide"));
+        emit(Event("collide_travel"));
+    /*}else if ( e.name() == "select_colide" & !minion().selected_colide() ){
         emit(Event("select_colide"));
-        emit(Event("colide_select"));
-    }else if ( e.name() == "fight_colide" & !minion().selected_colide() ){
-        emit(Event("fight_colide"));
-        emit(Event("colide_idle"));
+        emit(Event("colide_select"));*/
+    }else if ( e.name() == "fight_collide" & !minion().selected_colide() ){
+        emit(Event("fight_collide"));
+        emit(Event("collide_fight"));
     }
     
 }
 void Colide::exit(const Event& e) {}
 
-Minion& Idle_Select:: minion() { return (Minion&) state_machine(); }
-void Idle_Select::entry(const Event& e) {
-    if ( e.name() == "idle_select" & !minion().selected_idle() ){
-        emit(Event("idle_select"));
-        emit(Event("idle_travel"));
+Minion& Idle_Check:: minion() { return (Minion&) state_machine(); }
+void Idle_Check::entry(const Event& e) {
+    if ( e.name() == "travel_idle_check" & !minion().selected_idle() ){
+        emit(Event("travel_idle_check"));
+        emit(Event("idle_check_travel"));
     }/*else if ( e.name() == "fight_select" & !minion().selected_idle() ){
         emit(Event("fight_select"));
         emit(Event("idle_travel"));*/
     
 }
-void Idle_Select::exit(const Event& e) {}
+void Idle_Check::exit(const Event& e) {}

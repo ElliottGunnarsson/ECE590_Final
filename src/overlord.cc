@@ -85,76 +85,32 @@ void Overlord::draw_debug_info(Minion& mn){
     mvprintw(x+6,y+6,"colisions is %d",mn.collisions());
 }
 
-void Overlord::init(){
- 
-}
+void Overlord::init(){}
 
 void Overlord::update() {
-
-static int spacing = 1;
-static int height = 50;
-static int width = 100;
 
     int c = wgetch(stdscr);
     if (c == KEY_MOUSE) {
     MEVENT event;
     if (getmouse(&event) == OK) {
         handle_click(event.y,event.x);
-        //_minions[1]->set_target(make_tuple(event.y,event.x));
       }
     }
 
-    /*************   EDITORS     *******************/
+/*************   EDITORS     *******************/
     //add key commands here
     switch ( c ) {            
-        case 's':
-            std::cout<<"pushed the s button\n";
-            emit(Event("start/stop"));
-            break;
-        case 'r':
-            emit(Event("reset"));
-            clear(); // Clear the screen of old stuff
-            break;
-        case '1':
-            if(_selection !=-1){
-                _minions[_selection]->set_propagate(false);
-            }           
-            break;
-        case '2':
-            if(_selection !=-1){
-                _minions[_selection]->set_propagate(true);
-            }  
-            break;
-        case '4':
-            
-            break;
-        case '5':
-            
-            break;
-        case '6':
-            
-            break;
         case '7':
-            //emit(Event("move"));
-            toggle = !toggle;//mvprintw(40,40,"pushing 7");
-            break;
-        case '8':
-            width--;
+            toggle = !toggle;
             break;
         case 'q':
             std::cout << "halting\n";
             halt();
             break;
-        case 'i':emit(Event("idle_check"));break;
-        case 'o':emit(Event("travel_check"));break;
-        case 'k':emit(Event("idle"));break;
-        case 'l':emit(Event("travel"));break;
-/*************   END EDITORS     *******************/
     }
-
-
+/*************   END EDITORS     *******************/
+    
     check_collisions();
-
     clear();
     draw_pen();
     for(int i = 0; i< _minions.size();i++){
@@ -166,16 +122,16 @@ static int width = 100;
         }
     }
 
-
     usleep(9999);
 }
 
-
 void Overlord::handle_click(int x, int y){
 select_minion(x,y);
+/*************   EDITORS     *******************/
 
+//handle click events here
 
-
+/*************   END EDITORS     *******************/
 }
 
 void Overlord::select_minion(int x,int y){
@@ -183,27 +139,31 @@ void Overlord::select_minion(int x,int y){
             
                 int ix = std::get<0>(_minions[i]->get_coords());
                 int iy = std::get<1>(_minions[i]->get_coords());
-                if((ix<x) & (x<ix+_minions[i]->get_size_width()) & //){
+                if((ix<x) & (x<ix+_minions[i]->get_size_width()) &
                     (iy<y & (y<iy+_minions[i]->get_size_height()))){
                         if(_selection != -1){
                             _minions[_selection]->unselect();
                         }
                         _selection = i;
                         _minions[_selection]->select();
-                        emit(Event("idle_check"));
-                        emit(Event("travel_check"));
-                        emit(Event("fight_check"));
+                        emit(Event("idle_select"));
+                        if(_minions[_selection]->current().name()!="select"){
+                            emit(Event("travel_select"));
+                        }
+                        if(_minions[_selection]->current().name()!="select"){
+                            emit(Event("fight_select"));
+                        }
+                        break;
                 }else{
                     if(_selection !=-1){
                         _minions[_selection]->set_target(make_tuple(x,y));
+                        emit(Event("select_travel"));
                     }
-                    emit(Event("travel"));
+                    _selection = -1;
+                    break;
                 }
-                
-            
         }
 }
-
 
 void Overlord::check_collisions(){
     for(int i =0;i<_minions.size();i++){

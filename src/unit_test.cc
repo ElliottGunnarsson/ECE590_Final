@@ -72,22 +72,22 @@ namespace {
 
 //start idle
 EXPECT_EQ(elf.current().name(),"idle");//test idle
-m.emit(Event("idle_check"));//emit check_idle
+m.emit(Event("idle_select"));//emit check_idle
 EXPECT_EQ(elf.current().name(),"idle");//test idle
 elf.select();//select
-m.emit(Event("idle_check"));//emit idle checck
+m.emit(Event("idle_select"));//emit idle checck
 EXPECT_EQ(elf.current().name(),"select");//test selected
-m.emit(Event("travel"));//emit travel
+m.emit(Event("select_travel"));//emit travel
 EXPECT_EQ(elf.current().name(),"traveling");//test treaveling
 elf.unselect();//unselcet
-m.emit(Event("travel_check"));//emit travel sellect
+m.emit(Event("travel_select"));//emit travel sellect
 EXPECT_EQ(elf.current().name(),"traveling");//test treaveling
-m.emit(Event("travel_colide"));//emit colide
+m.emit(Event("travel_collide"));//emit colide
 EXPECT_EQ(elf.current().name(),"traveling");//test traveling
 elf.select_colide();//slect collide
-m.emit(Event("travel_colide"));//emit collide
+m.emit(Event("travel_collide"));//emit collide
 EXPECT_EQ(elf.current().name(),"colide");//test colide
-m.emit(Event("fight"));//emit emit fight
+m.emit(Event("collide_fight"));//emit emit fight
 EXPECT_EQ(elf.current().name(),"fighting");//test fight
 
 endwin();

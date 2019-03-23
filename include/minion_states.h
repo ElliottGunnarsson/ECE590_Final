@@ -70,20 +70,20 @@ namespace overlord {
         //! called when entering Colide state
         void entry(const Event&);
         //! called every update while in Colide state
-        void during() {emit(Event("fight"));}            
+        void during() {emit(Event("collide_fight"));}            
         //! called when exiting Colide state
         void exit(const Event&);
         Minion& minion();        
     };
-    //! the Idle_Select state for Minions
-    class Idle_Select : public State {        
+    //! the Idle_Check state for Minions
+    class Idle_Check : public State {        
         public:
         //! build a new Idle_Select state
-        Idle_Select() : State("idle_select") {}
+        Idle_Check() : State("idle_check") {}
         //! called when entering Idle_Select state
         void entry(const Event&);
         //! called every update while in Idle_Select state
-        void during() {emit(Event("idle"));}            
+        void during() {emit(Event("idle_check_idle"));}            
         //! called when exiting Idle_Select state
         void exit(const Event&);
         Minion& minion();        

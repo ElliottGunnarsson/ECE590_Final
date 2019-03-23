@@ -63,7 +63,7 @@ int main() {
     
     //schedule all your minions or they won't update
     for(int i=0;i<_minions.size();i++){
-        m.schedule(*_minions[i], 100_ms);
+        m.schedule(*_minions[i], 10_ms);
     }
 
     //schedule the overlord and run the game

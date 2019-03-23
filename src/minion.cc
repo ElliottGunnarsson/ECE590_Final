@@ -33,7 +33,7 @@ Minion::Minion(
     // Define state machine initial states and transitions here
     set_initial(_idle);
     set_propagate(false);
-    add_transition("idle_check", _idle, _select);
+    /*add_transition("idle_check", _idle, _select);
     add_transition("travel_check", _traveling, _select);
     add_transition("fight_check", _fighting, _select);
     add_transition("idle", _select, _idle);
@@ -51,15 +51,42 @@ Minion::Minion(
 
     add_transition("fight", _collide, _fighting);
     //add_transition("fight_colide", _fighting, _collide);
+*/
 
+
+    add_transition("select_idle", _select, _idle);
+    add_transition("select_travel", _select, _traveling);
+    add_transition("select_fight", _select, _fighting);
+    add_transition("collide_fight", _collide, _fighting);
+    add_transition("collide_idle", _collide, _idle);
+    add_transition("collide_travel", _collide, _traveling);
+    add_transition("idle_check_idle", _idle_check, _idle);
+    add_transition("idle_check_travel", _idle_check, _traveling);
+
+    add_transition("idle_select", _idle, _select);
+    add_transition("travel_select", _traveling, _select);
+    add_transition("fight_select", _fighting, _select);
+    add_transition("idle_collide", _idle, _collide);
+    add_transition("travel_collide", _traveling, _collide);
+    add_transition("fight_collide", _fighting, _collide);
+    add_transition("travel_idle_check", _traveling, _idle_check);
+    
+    
+    
 }
 
 void Minion::add_collision(Minion* mn){
         _collisions.push_back(mn);
         select_colide();
-        emit(Event("idle_colide"));
-        emit(Event("travel_colide"));
-        emit(Event("select_colide"));
+        if(current().name()!="colide"){
+            emit(Event("idle_collide"));
+        }
+        if(current().name()!="colide"){
+            emit(Event("travel_collide"));
+        }
+        if(current().name()!="colide"){
+            emit(Event("fight_collide"));
+        }
         unselect_colide();
 };
 
@@ -103,8 +130,8 @@ _move_calls++;
     
     if(current().name() == "traveling" & compx == 0 & compx ==0){
         select_idle();
-        emit(Event("idle_select"));
-        emit(Event("idle"));
+        emit(Event("travel_idle_check"));
+        emit(Event("idle_check_idle"));
         unselect_idle();
     }    
     

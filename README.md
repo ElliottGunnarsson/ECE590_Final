@@ -111,10 +111,15 @@ Quick Start Guide
 
 Editors Guide
 ===
+- Handle Mouse and key inputs in the Overlord Process.
 
+- Construct all the Minions in Main and pass the pointers to Overload.
 
+- Don't forget to schedule the minions with a manager.
 
-
-
-
-
+- Update any minion characteritis in the Durring function of each state.
+- Updateable States are...
+    - Idle
+    - Traveling
+    - Fighting
+    - Select

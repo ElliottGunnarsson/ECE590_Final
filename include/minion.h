@@ -111,7 +111,7 @@ namespace overlord {
         Fighting _fighting;
         Select _select;
         Colide _collide;
-        Idle_Select _idle_select;
+        Idle_Check _idle_check;
 
         // Other private variables
         double _attck;
