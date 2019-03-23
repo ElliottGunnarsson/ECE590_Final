@@ -28,10 +28,11 @@ Overlord::Overlord(
 };
 
 void Overlord::draw_pen(){
-//50 by 90
+//50 by 90 walls
 for (int i = 0; i<90;i++ ){mvprintw(0,i,"=");mvprintw(50,i,"=");}
 for (int i = 0; i<50;i++ ){mvprintw(i,0,"||");mvprintw(i,90,"||");}
 
+//add game instructions
 string line1 = "The bunnies are running rampant!";
 string line2 = "Click on one and click away to separate them.";
 string line3 = "If you need to leave press 'Q'";
@@ -47,13 +48,14 @@ void Overlord::draw_minion(Minion& mn){
 int x = std::get<0>(mn.get_coords());
 int y = std::get<1>(mn.get_coords()); 
 
-
+//chose color based on state
 if(mn.current().name() == "fighting"){
     attron(COLOR_PAIR(2));
 }else if(mn.current().name() == "select"){
     attron(COLOR_PAIR(3));
 }
 
+//ascii art here
 string line1 = "()()";
 string line2 = "(..)";
 string line3 = "(,),)";
@@ -62,7 +64,7 @@ mvprintw(x,y,line1.c_str());
 mvprintw(x+1,y,line2.c_str());
 mvprintw(x+2,y,line3.c_str());
 
-attron(COLOR_PAIR(1));
+attron(COLOR_PAIR(1)); // return color to normal
 }
 
 void Overlord::draw_debug_info(Minion& mn){
@@ -93,7 +95,7 @@ void Overlord::update() {
     if (c == KEY_MOUSE) {
     MEVENT event;
     if (getmouse(&event) == OK) {
-        handle_click(event.y,event.x);
+        handle_click(event.y,event.x); //x and y notation is backwards
       }
     }
 

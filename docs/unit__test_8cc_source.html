@@ -161,22 +161,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//start idle</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;idle&quot;</span>);<span class="comment">//test idle</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;m.emit(Event(<span class="stringliteral">&quot;idle_check&quot;</span>));<span class="comment">//emit check_idle</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;m.emit(Event(<span class="stringliteral">&quot;idle_select&quot;</span>));<span class="comment">//emit check_idle</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;idle&quot;</span>);<span class="comment">//test idle</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;elf.<a class="code" href="classoverlord_1_1Minion.html#a6dac842c02f0877d32f59c62e70e9c33">select</a>();<span class="comment">//select</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;m.emit(Event(<span class="stringliteral">&quot;idle_check&quot;</span>));<span class="comment">//emit idle checck</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;m.emit(Event(<span class="stringliteral">&quot;idle_select&quot;</span>));<span class="comment">//emit idle checck</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;select&quot;</span>);<span class="comment">//test selected</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel&quot;</span>));<span class="comment">//emit travel</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;m.emit(Event(<span class="stringliteral">&quot;select_travel&quot;</span>));<span class="comment">//emit travel</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;traveling&quot;</span>);<span class="comment">//test treaveling</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;elf.<a class="code" href="classoverlord_1_1Minion.html#acf12a430951323385d91840e0b501fa4">unselect</a>();<span class="comment">//unselcet</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_check&quot;</span>));<span class="comment">//emit travel sellect</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_select&quot;</span>));<span class="comment">//emit travel sellect</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;traveling&quot;</span>);<span class="comment">//test treaveling</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_colide&quot;</span>));<span class="comment">//emit colide</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_collide&quot;</span>));<span class="comment">//emit colide</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;traveling&quot;</span>);<span class="comment">//test traveling</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;elf.<a class="code" href="classoverlord_1_1Minion.html#a09f45cd5ab0075cc8dcdf8d1abb57211">select_colide</a>();<span class="comment">//slect collide</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_colide&quot;</span>));<span class="comment">//emit collide</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;m.emit(Event(<span class="stringliteral">&quot;travel_collide&quot;</span>));<span class="comment">//emit collide</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;colide&quot;</span>);<span class="comment">//test colide</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;m.emit(Event(<span class="stringliteral">&quot;fight&quot;</span>));<span class="comment">//emit emit fight</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;m.emit(Event(<span class="stringliteral">&quot;collide_fight&quot;</span>));<span class="comment">//emit emit fight</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;EXPECT_EQ(elf.current().name(),<span class="stringliteral">&quot;fighting&quot;</span>);<span class="comment">//test fight</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;endwin();</div>
@@ -301,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classoverlord_1_1Minion_html_ae76c31a66394dae3751d58531ea27f06"><div class="ttname"><a href="classoverlord_1_1Minion.html#ae76c31a66394dae3751d58531ea27f06">overlord::Minion::unselect_colide</a></div><div class="ttdeci">void unselect_colide()</div><div class="ttdoc">used internally be colison detector. needed for state machine transition </div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00085">minion.h:85</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a1cf8bd60062d1554b34e0943a76545fe"><div class="ttname"><a href="classoverlord_1_1Minion.html#a1cf8bd60062d1554b34e0943a76545fe">overlord::Minion::get_coords_target</a></div><div class="ttdeci">tuple&lt; int, int &gt; get_coords_target()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00045">minion.h:45</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a65b5850ed7d3ee9c34b4aba99185ce4b"><div class="ttname"><a href="classoverlord_1_1Minion.html#a65b5850ed7d3ee9c34b4aba99185ce4b">overlord::Minion::get_size_width</a></div><div class="ttdeci">int get_size_width()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00072">minion.h:72</a></div></div>
-<div class="ttc" id="classoverlord_1_1Minion_html_aa2050934a75366aba86db0bf7b3e5b25"><div class="ttname"><a href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">overlord::Minion::move_minion</a></div><div class="ttdeci">void move_minion()</div><div class="ttdoc">move the minion closer to the the target by 1 speed unit </div><div class="ttdef"><b>Definition:</b> <a href="minion_8cc_source.html#l00067">minion.cc:67</a></div></div>
+<div class="ttc" id="classoverlord_1_1Minion_html_aa2050934a75366aba86db0bf7b3e5b25"><div class="ttname"><a href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">overlord::Minion::move_minion</a></div><div class="ttdeci">void move_minion()</div><div class="ttdoc">move the minion closer to the the target by 1 speed unit </div><div class="ttdef"><b>Definition:</b> <a href="minion_8cc_source.html#l00094">minion.cc:94</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_ad870f783c79f9fb873c10abebfe09cd5"><div class="ttname"><a href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">overlord::Minion::get_move_calls</a></div><div class="ttdeci">int get_move_calls()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00064">minion.h:64</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_ac66450f79ab1707451030db162922e7e"><div class="ttname"><a href="classoverlord_1_1Minion.html#ac66450f79ab1707451030db162922e7e">overlord::Minion::collisions</a></div><div class="ttdeci">int collisions()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00060">minion.h:60</a></div></div>
 <div class="ttc" id="namespaceoverlord_html"><div class="ttname"><a href="namespaceoverlord.html">overlord</a></div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00010">minion.h:10</a></div></div>
@@ -314,7 +314,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 23 2019 05:25:34 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 23 2019 06:44:47 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

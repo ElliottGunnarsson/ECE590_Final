@@ -130,49 +130,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp; Select:: minion() { <span class="keywordflow">return</span> (<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp;) state_machine(); }</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classoverlord_1_1Select.html#a90f8cd10cc58e1eb7cd3ff91196109f0">   43</a></span>&#160;<span class="keywordtype">void</span> Select::entry(<span class="keyword">const</span> Event&amp; e) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;idle_check&quot;</span> &amp; !minion().selected() ){</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_check&quot;</span>));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle&quot;</span>));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;travel_check&quot;</span> &amp; !minion().selected() ){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel_check&quot;</span>));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel&quot;</span>));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;fight_check&quot;</span> &amp; !minion().selected() ){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        emit(Event(<span class="stringliteral">&quot;fight_check&quot;</span>));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle&quot;</span>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;idle_select&quot;</span> &amp; !minion().selected() ){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_select&quot;</span>));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        emit(Event(<span class="stringliteral">&quot;select_idle&quot;</span>));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;travel_select&quot;</span> &amp; !minion().selected() ){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel_select&quot;</span>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        emit(Event(<span class="stringliteral">&quot;select_travel&quot;</span>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;fight_select&quot;</span> &amp; !minion().selected() ){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        emit(Event(<span class="stringliteral">&quot;fight_select&quot;</span>));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        emit(Event(<span class="stringliteral">&quot;select_fight&quot;</span>));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classoverlord_1_1Select.html#a118dce83749eaaa2dd9245d7bbe26abb">   55</a></span>&#160;<span class="keywordtype">void</span> Select::exit(<span class="keyword">const</span> Event&amp; e) {}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp; Colide:: minion() { <span class="keywordflow">return</span> (<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp;) state_machine(); }</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classoverlord_1_1Colide.html#a68729c48d96181f6803f692bf3a0084d">   58</a></span>&#160;<span class="keywordtype">void</span> Colide::entry(<span class="keyword">const</span> Event&amp; e) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;idle_colide&quot;</span> &amp; !minion().selected_colide() ){</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_colide&quot;</span>));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        emit(Event(<span class="stringliteral">&quot;colide_idle&quot;</span>));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;travel_colide&quot;</span> &amp; !minion().selected_colide() ){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel_colide&quot;</span>));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        emit(Event(<span class="stringliteral">&quot;colide_travel&quot;</span>));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;select_colide&quot;</span> &amp; !minion().selected_colide() ){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        emit(Event(<span class="stringliteral">&quot;select_colide&quot;</span>));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        emit(Event(<span class="stringliteral">&quot;colide_select&quot;</span>));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;fight_colide&quot;</span> &amp; !minion().selected_colide() ){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        emit(Event(<span class="stringliteral">&quot;fight_colide&quot;</span>));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        emit(Event(<span class="stringliteral">&quot;colide_idle&quot;</span>));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;idle_collide&quot;</span> &amp; !minion().selected_colide() ){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_collide&quot;</span>));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        emit(Event(<span class="stringliteral">&quot;collide_idle&quot;</span>));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;travel_collide&quot;</span> &amp; !minion().selected_colide() ){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel_collide&quot;</span>));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        emit(Event(<span class="stringliteral">&quot;collide_travel&quot;</span>));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/*}else if ( e.name() == &quot;select_colide&quot; &amp; !minion().selected_colide() ){</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        emit(Event(&quot;select_colide&quot;));</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        emit(Event(&quot;colide_select&quot;));*/</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;fight_collide&quot;</span> &amp; !minion().selected_colide() ){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        emit(Event(<span class="stringliteral">&quot;fight_collide&quot;</span>));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        emit(Event(<span class="stringliteral">&quot;collide_fight&quot;</span>));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classoverlord_1_1Colide.html#a72475fee717c3cbcd8783332f1a26163">   74</a></span>&#160;<span class="keywordtype">void</span> Colide::exit(<span class="keyword">const</span> Event&amp; e) {}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp; Idle_Select:: minion() { <span class="keywordflow">return</span> (<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp;) state_machine(); }</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classoverlord_1_1Idle__Select.html#a319e7161a2af6aa72020ef208a575e32">   77</a></span>&#160;<span class="keywordtype">void</span> Idle_Select::entry(<span class="keyword">const</span> Event&amp; e) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;idle_select&quot;</span> &amp; !minion().selected_idle() ){</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_select&quot;</span>));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_travel&quot;</span>));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp; Idle_Check:: minion() { <span class="keywordflow">return</span> (<a class="code" href="classoverlord_1_1Minion.html">Minion</a>&amp;) state_machine(); }</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classoverlord_1_1Idle__Check.html#adbd3f37bc1ebb9636eb2dc675bc580fb">   77</a></span>&#160;<span class="keywordtype">void</span> Idle_Check::entry(<span class="keyword">const</span> Event&amp; e) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> ( e.name() == <span class="stringliteral">&quot;travel_idle_check&quot;</span> &amp; !minion().selected_idle() ){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        emit(Event(<span class="stringliteral">&quot;travel_idle_check&quot;</span>));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        emit(Event(<span class="stringliteral">&quot;idle_check_travel&quot;</span>));</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }<span class="comment">/*else if ( e.name() == &quot;fight_select&quot; &amp; !minion().selected_idle() ){</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">        emit(Event(&quot;fight_select&quot;));</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">        emit(Event(&quot;idle_travel&quot;));*/</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classoverlord_1_1Idle__Select.html#afc0484e5cdeedde6f236557ee12f2ae7">   86</a></span>&#160;<span class="keywordtype">void</span> Idle_Select::exit(<span class="keyword">const</span> Event&amp; e) {}</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classoverlord_1_1Idle__Check.html#ad889c7d95f12c2bc523b45b03307b980">   86</a></span>&#160;<span class="keywordtype">void</span> Idle_Check::exit(<span class="keyword">const</span> Event&amp; e) {}</div>
 <div class="ttc" id="namespacestd_1_1chrono_html"><div class="ttname"><a href="namespacestd_1_1chrono.html">chrono</a></div></div>
 <div class="ttc" id="namespaceoverlord_html"><div class="ttname"><a href="namespaceoverlord.html">overlord</a></div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00010">minion.h:10</a></div></div>
 <div class="ttc" id="namespaceelma_html"><div class="ttname"><a href="namespaceelma.html">elma</a></div></div>
@@ -180,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 23 2019 05:25:34 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 23 2019 06:44:46 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
