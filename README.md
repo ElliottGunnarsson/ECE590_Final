@@ -54,7 +54,7 @@ Complete</span>] Compiles Code with basic use case
 1. [<span style="color:lime">
 Complete</span>] Implemented UI, AI, and Coords
     - UI takes keystrokes and mouse clicks
-    - AI assigns randome movements in idle state
+    - AI assigns random movements in idle state
     - coordinate data used to detect colitions
 1. [<span style="color:lime">
 Complete</span>] Implemented GUI
@@ -105,7 +105,7 @@ Quick Start Guide
     ```
 1. Run the game
     ```make
-    bin/overlord
+    $ bin/overlord
     ```
 
 

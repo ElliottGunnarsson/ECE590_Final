@@ -87,6 +87,22 @@ namespace overlord {
         //! \return true if colition is recently detected.
         bool selected_colide(){return _selected_colide;};
 
+        //! used internally be idle detector. needed for state machine transition
+        void select_idle(){_selected_idle = true;};
+        //! used internally be idle detector. needed for state machine transition
+        void unselect_idle(){_selected_idle = false;};
+        //! used internally be idle detector. needed for state machine transition
+        //! \return true if colition is recently detected.
+        bool selected_idle(){return _selected_idle;};
+
+        //! used internally by AI
+        //! \return returns direction of drift
+        int get_xtrim(){return _xtrim;};
+
+        //! used internally by AI
+        //! \return returns direction of drift
+        int get_ytrim(){return _ytrim;};
+
         private:
 
         // When overriding the StateMachine class, put state declarations here.
@@ -95,6 +111,7 @@ namespace overlord {
         Fighting _fighting;
         Select _select;
         Colide _collide;
+        Idle_Select _idle_select;
 
         // Other private variables
         double _attck;
@@ -114,7 +131,10 @@ namespace overlord {
         std::vector<Minion*> _collisions;
         bool _selected = false;
         bool _selected_colide = false;
+        bool _selected_idle = false;
 
+        int _xtrim = 0;
+        int _ytrim = 0;
     };
 
 }

@@ -104,8 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classoverlord_1_1Minion__inherit__graph.png" border="0" usemap="#overlord_1_1Minion_inherit__map" alt="Inheritance graph"/></div>
-<map name="overlord_1_1Minion_inherit__map" id="overlord_1_1Minion_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for overlord::Minion:</div>
@@ -113,8 +111,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classoverlord_1_1Minion__coll__graph.png" border="0" usemap="#overlord_1_1Minion_coll__map" alt="Collaboration graph"/></div>
-<map name="overlord_1_1Minion_coll__map" id="overlord_1_1Minion_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -165,6 +161,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:ae76c31a66394dae3751d58531ea27f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94dd518850dd7c9c51acc5391e5f77ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a> ()</td></tr>
 <tr class="separator:a94dd518850dd7c9c51acc5391e5f77ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a842ab27fdc2472324f8c92a285e1d12f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a842ab27fdc2472324f8c92a285e1d12f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#a842ab27fdc2472324f8c92a285e1d12f">select_idle</a> ()</td></tr>
+<tr class="memdesc:a842ab27fdc2472324f8c92a285e1d12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">used internally be idle detector. needed for state machine transition <br /></td></tr>
+<tr class="separator:a842ab27fdc2472324f8c92a285e1d12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f2af590f458f86b685955a031ee954"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9f2af590f458f86b685955a031ee954"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#ab9f2af590f458f86b685955a031ee954">unselect_idle</a> ()</td></tr>
+<tr class="memdesc:ab9f2af590f458f86b685955a031ee954"><td class="mdescLeft">&#160;</td><td class="mdescRight">used internally be idle detector. needed for state machine transition <br /></td></tr>
+<tr class="separator:ab9f2af590f458f86b685955a031ee954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364bd0293ad0a2e9eae7b4ffecf75f08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#a364bd0293ad0a2e9eae7b4ffecf75f08">selected_idle</a> ()</td></tr>
+<tr class="separator:a364bd0293ad0a2e9eae7b4ffecf75f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d19519fca791e4c36c8673dd9331351"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#a3d19519fca791e4c36c8673dd9331351">get_xtrim</a> ()</td></tr>
+<tr class="separator:a3d19519fca791e4c36c8673dd9331351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e2500bf83edb6747823b9173dfeedc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoverlord_1_1Minion.html#af2e2500bf83edb6747823b9173dfeedc">get_ytrim</a> ()</td></tr>
+<tr class="separator:af2e2500bf83edb6747823b9173dfeedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="classoverlord_1_1Minion.html" title="A Minion class, that inherits from StateMachine. ">Minion</a> class, that inherits from StateMachine. </p>
@@ -255,7 +265,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="minion_8cc_source.html#l00050">50</a> of file <a class="el" href="minion_8cc_source.html">minion.cc</a>.</p>
+<p>Definition at line <a class="el" href="minion_8cc_source.html#l00057">57</a> of file <a class="el" href="minion_8cc_source.html">minion.cc</a>.</p>
 
 </div>
 </div>
@@ -415,6 +425,58 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a3d19519fca791e4c36c8673dd9331351"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int overlord::Minion::get_xtrim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>used internally by AI </p><dl class="section return"><dt>Returns</dt><dd>returns direction of drift </dd></dl>
+
+<p>Definition at line <a class="el" href="minion_8h_source.html#l00100">100</a> of file <a class="el" href="minion_8h_source.html">minion.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2e2500bf83edb6747823b9173dfeedc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int overlord::Minion::get_ytrim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>used internally by AI </p><dl class="section return"><dt>Returns</dt><dd>returns direction of drift </dd></dl>
+
+<p>Definition at line <a class="el" href="minion_8h_source.html#l00104">104</a> of file <a class="el" href="minion_8h_source.html">minion.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a63c29cad1a2f1a70129e19f854b4fa97"></a>
 <div class="memitem">
 <div class="memproto">
@@ -467,6 +529,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a364bd0293ad0a2e9eae7b4ffecf75f08"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool overlord::Minion::selected_idle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>used internally be idle detector. needed for state machine transition </p><dl class="section return"><dt>Returns</dt><dd>true if colition is recently detected. </dd></dl>
+
+<p>Definition at line <a class="el" href="minion_8h_source.html#l00096">96</a> of file <a class="el" href="minion_8h_source.html">minion.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae3474ab4f3c69301f7974ceaaff7a96f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +594,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 22 2019 17:30:43 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 23 2019 05:25:34 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

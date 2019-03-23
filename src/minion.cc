@@ -35,16 +35,23 @@ Minion::Minion(
     set_propagate(false);
     add_transition("idle_check", _idle, _select);
     add_transition("travel_check", _traveling, _select);
+    add_transition("fight_check", _fighting, _select);
     add_transition("idle", _select, _idle);
     add_transition("travel", _select, _traveling);
     add_transition("travel_colide", _traveling, _collide);
     add_transition("idle_colide", _idle, _collide);
-    add_transition("select_colide", _select, _collide);
+    //add_transition("select_colide", _select, _collide);
     add_transition("colide_travel", _collide, _traveling);
     add_transition("colide_idle", _collide, _idle);
-    add_transition("colide_select", _collide, _select);
+    //add_transition("colide_select", _collide, _select);
     
+    add_transition("idle_select", _traveling, _idle_select);
+    add_transition("idle", _idle_select, _idle);
+    add_transition("idle_travel", _idle_select, _traveling);
+
     add_transition("fight", _collide, _fighting);
+    //add_transition("fight_colide", _fighting, _collide);
+
 }
 
 void Minion::add_collision(Minion* mn){
@@ -68,22 +75,39 @@ _move_calls++;
     if(compx>0){
         if(tempx>3){
                 tempx = get<0>(_coords) - _speed;
+        }else{
+            _xtrim = 0;
         }
     }else if(compx<0){
         if(tempx<50-_size_height){
                 tempx = get<0>(_coords) + _speed;
+        }else{
+            _xtrim = -1;
         }
     }
 
     if(compy>0){
         if(tempy>3){
                 tempy = get<1>(_coords) - _speed;
+        }else{
+            _ytrim = 0;
         }
     }else if(compy<0){
         if(tempy<90-_size_width){
                 tempy = get<1>(_coords) + _speed;
+        }else{
+            _ytrim = -1;
         }
     }
         _coords = make_tuple(tempx,tempy);
-        return;
+    
+    if(current().name() == "traveling" & compx == 0 & compx ==0){
+        select_idle();
+        emit(Event("idle_select"));
+        emit(Event("idle"));
+        unselect_idle();
+    }    
+    
+    
+    return;
 }

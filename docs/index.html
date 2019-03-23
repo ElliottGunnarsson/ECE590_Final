@@ -103,48 +103,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Completion</li>
 </ul>
 <ol type="1">
-<li>Set up tests and compile code with basic use cases</li>
-</ol>
-<ul>
+<li>Set up tests and compile code with basic use cases<ul>
 <li>3-17-2019</li>
 <li>20%</li>
 </ul>
-<ol type="1">
-<li>Implement UI, AI, and Coords</li>
+</li>
 </ol>
-<ul>
+<ol type="1">
+<li>Implement UI, AI, and Coords<ul>
 <li>3-18-2019</li>
 <li>40%</li>
 </ul>
-<ol type="1">
-<li>Implement GUI</li>
+</li>
 </ol>
-<ul>
+<ol type="1">
+<li>Implement GUI<ul>
 <li>3-19-2019</li>
 <li>60%</li>
 </ul>
-<ol type="1">
-<li>Document all additions with Doxygen notation</li>
+</li>
 </ol>
-<ul>
+<ol type="1">
+<li>Document all additions with Doxygen notation<ul>
 <li>3-20-2019</li>
 <li>80%</li>
 </ul>
-<ol type="1">
-<li>Complete docker install guide and quickstart instruction set</li>
+</li>
 </ol>
-<ul>
+<ol type="1">
+<li>Complete docker install guide and quickstart instruction set<ul>
 <li>3-21-2019</li>
 <li>100%</li>
 </ul>
-<ol type="1">
-<li>Release new RTS as an executable</li>
+</li>
 </ol>
-<ul>
+<ol type="1">
+<li>Release new RTS as an executable<ul>
 <li>3-22-2019</li>
 <li>110% - stretch goal</li>
 </ul>
-<h1>Progress report </h1>
+</li>
+</ol>
+<h1>Progress report week 1 </h1>
 <ul>
 <li>made new repo as a fork of elma_project</li>
 <li>watched my daughter grow up.</li>
@@ -152,11 +152,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>once bare essencials are working the rest is an expansive effort.</li>
 <li>Expecting to work heavily Wednesday Thursday Friday as I do not have work or any other oblegations those days.</li>
 </ul>
-<p>docker run -v /c/Users/ellio/Documents/Embedded_Applications/ECE590_Final:/source -it klavins/elma:latest bash </p>
+<h1>Progress report week 2 </h1>
+<ul>
+<li>Milestone Progress %105<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<ol type="1">
+<li>[<span style="color:lime"> Complete</span>] Compiles Code with basic use case<ul>
+<li>Create minions with stats</li>
+<li>test compilers, state transitions, all public functions</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
+<li>[<span style="color:lime"> Complete</span>] Implemented UI, AI, and Coords<ul>
+<li>UI takes keystrokes and mouse clicks</li>
+<li>AI assigns random movements in idle state</li>
+<li>coordinate data used to detect colitions</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
+<li>[<span style="color:lime"> Complete</span>] Implemented GUI<ul>
+<li>color coded display alerts user wich minion is selected</li>
+<li>ncurses is used with command prompt to detect location of mouse clicks</li>
+<li>mouse clickes are used to select units and assign tasks like "travel"</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
+<li>[<span style="color:lime"> Complete</span>] Documentation Complete<ul>
+<li>Doxygen notation added to all include files</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
+<li>[<span style="color:lime"> Complete</span>]Quickstart guide Complete<ul>
+<li>install instructions added for docker, git clone, make, run</li>
+<li>editors guide added for custom versions based on code.</li>
+</ul>
+</li>
+</ol>
+<ol type="1">
+<li>[<span style="color:yellow"> Almost</span>] Release RTS as executable<ul>
+<li>RTS game release as docker command promt interface</li>
+</ul>
+</li>
+</ol>
+<p>docker run -v /c/Users/ellio/Documents/Embedded_Applications/ECE590_Final:/source -it klavins/elma:latest bash</p>
+<h1>Quick Start Guide </h1>
+<ol type="1">
+<li>Install Docker ```http <a href="https://www.docker.com/get-started">https://www.docker.com/get-started</a> ```</li>
+</ol>
+<ol type="1">
+<li>Open Docker Quickstart Terminal and CD to your working directoy. Use Full screen mode for gameplay.</li>
+</ol>
+<ol type="1">
+<li>Clone repo ```bash $ git clone <a href="https://github.com/ElliottGunnarsson/ECE590_Final.git">https://github.com/ElliottGunnarsson/ECE590_Final.git</a> ```</li>
+</ol>
+<ol type="1">
+<li>Build Docker Image from latest elma image. For windows replace $PWD with full file path. ```docker $ docker run -v $PWD/ECE590_Final:/source -it klavins/elma:latest bash ```</li>
+</ol>
+<ol type="1">
+<li>Complie the program files. ```make $ make ```</li>
+</ol>
+<ol type="1">
+<li>Run the game ```make $ bin/overlord ```</li>
+</ol>
+<h1>Editors Guide </h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 22 2019 17:30:43 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 23 2019 05:25:34 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

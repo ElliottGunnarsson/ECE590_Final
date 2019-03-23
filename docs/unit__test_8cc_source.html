@@ -238,45 +238,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;TEST(Minion_Basics,Move_Calls) { </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">get_move_calls</a>(),0);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">get_move_calls</a>(),3);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;TEST(Minion_Basics,Get_size) { </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a1a82d37199cda26cce202ec17d2f06c8">get_size_height</a>(),3);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a65b5850ed7d3ee9c34b4aba99185ce4b">get_size_width</a>(),4);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;TEST(Minion_Basics,<a class="code" href="classoverlord_1_1Select.html">Select</a>) { </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#a6dac842c02f0877d32f59c62e70e9c33">select</a>();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#acf12a430951323385d91840e0b501fa4">unselect</a>();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;TEST(Minion_Basics,Colide_Select) { </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#a09f45cd5ab0075cc8dcdf8d1abb57211">select_colide</a>();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#ae76c31a66394dae3751d58531ea27f06">unselect_colide</a>();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    Manager m;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> goblin;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    std::vector&lt;Minion*&gt; _minions = {&amp;elf,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                    &amp;goblin};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="classoverlord_1_1Overlord.html">Overlord</a> ov(_minions);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#ae3474ab4f3c69301f7974ceaaff7a96f">set_target</a>(make_tuple(2,2));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    goblin.<a class="code" href="classoverlord_1_1Minion.html#ae3474ab4f3c69301f7974ceaaff7a96f">set_target</a>(make_tuple(30,30));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    m.schedule(ov, 100_ms)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;     .schedule(elf, 100_ms)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;     .schedule(goblin, 100_ms)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;     .init()</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;     .start();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">get_move_calls</a>(),0);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">move_minion</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">get_move_calls</a>(),3);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;TEST(Minion_Basics,Get_size) { </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a1a82d37199cda26cce202ec17d2f06c8">get_size_height</a>(),3);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a65b5850ed7d3ee9c34b4aba99185ce4b">get_size_width</a>(),4);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;TEST(Minion_Basics,<a class="code" href="classoverlord_1_1Select.html">Select</a>) { </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#a6dac842c02f0877d32f59c62e70e9c33">select</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#acf12a430951323385d91840e0b501fa4">unselect</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a63c29cad1a2f1a70129e19f854b4fa97">selected</a>(),<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;TEST(Minion_Basics,Colide_Select) { </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classoverlord_1_1Minion.html">Minion</a> elf(make_tuple(5,7));</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#a09f45cd5ab0075cc8dcdf8d1abb57211">select_colide</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    elf.<a class="code" href="classoverlord_1_1Minion.html#ae76c31a66394dae3751d58531ea27f06">unselect_colide</a>();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    EXPECT_EQ(elf.<a class="code" href="classoverlord_1_1Minion.html#a94dd518850dd7c9c51acc5391e5f77ef">selected_colide</a>(),<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a9cef45bd7486b0d7acb10ff74e790696"><div class="ttname"><a href="classoverlord_1_1Minion.html#a9cef45bd7486b0d7acb10ff74e790696">overlord::Minion::get_coords</a></div><div class="ttdeci">tuple&lt; int, int &gt; get_coords()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00041">minion.h:41</a></div></div>
 <div class="ttc" id="classoverlord_1_1Overlord_html"><div class="ttname"><a href="classoverlord_1_1Overlord.html">overlord::Overlord</a></div><div class="ttdoc">An Overlord class, that inherits from Process. </div><div class="ttdef"><b>Definition:</b> <a href="overlord_8h_source.html#l00018">overlord.h:18</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a09f45cd5ab0075cc8dcdf8d1abb57211"><div class="ttname"><a href="classoverlord_1_1Minion.html#a09f45cd5ab0075cc8dcdf8d1abb57211">overlord::Minion::select_colide</a></div><div class="ttdeci">void select_colide()</div><div class="ttdoc">used internally be colison detector. needed for state machine transition </div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00083">minion.h:83</a></div></div>
@@ -286,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classoverlord_1_1Minion_html_ae76c31a66394dae3751d58531ea27f06"><div class="ttname"><a href="classoverlord_1_1Minion.html#ae76c31a66394dae3751d58531ea27f06">overlord::Minion::unselect_colide</a></div><div class="ttdeci">void unselect_colide()</div><div class="ttdoc">used internally be colison detector. needed for state machine transition </div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00085">minion.h:85</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a1cf8bd60062d1554b34e0943a76545fe"><div class="ttname"><a href="classoverlord_1_1Minion.html#a1cf8bd60062d1554b34e0943a76545fe">overlord::Minion::get_coords_target</a></div><div class="ttdeci">tuple&lt; int, int &gt; get_coords_target()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00045">minion.h:45</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_a65b5850ed7d3ee9c34b4aba99185ce4b"><div class="ttname"><a href="classoverlord_1_1Minion.html#a65b5850ed7d3ee9c34b4aba99185ce4b">overlord::Minion::get_size_width</a></div><div class="ttdeci">int get_size_width()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00072">minion.h:72</a></div></div>
-<div class="ttc" id="classoverlord_1_1Minion_html_aa2050934a75366aba86db0bf7b3e5b25"><div class="ttname"><a href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">overlord::Minion::move_minion</a></div><div class="ttdeci">void move_minion()</div><div class="ttdoc">move the minion closer to the the target by 1 speed unit </div><div class="ttdef"><b>Definition:</b> <a href="minion_8cc_source.html#l00060">minion.cc:60</a></div></div>
+<div class="ttc" id="classoverlord_1_1Minion_html_aa2050934a75366aba86db0bf7b3e5b25"><div class="ttname"><a href="classoverlord_1_1Minion.html#aa2050934a75366aba86db0bf7b3e5b25">overlord::Minion::move_minion</a></div><div class="ttdeci">void move_minion()</div><div class="ttdoc">move the minion closer to the the target by 1 speed unit </div><div class="ttdef"><b>Definition:</b> <a href="minion_8cc_source.html#l00067">minion.cc:67</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_ad870f783c79f9fb873c10abebfe09cd5"><div class="ttname"><a href="classoverlord_1_1Minion.html#ad870f783c79f9fb873c10abebfe09cd5">overlord::Minion::get_move_calls</a></div><div class="ttdeci">int get_move_calls()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00064">minion.h:64</a></div></div>
 <div class="ttc" id="classoverlord_1_1Minion_html_ac66450f79ab1707451030db162922e7e"><div class="ttname"><a href="classoverlord_1_1Minion.html#ac66450f79ab1707451030db162922e7e">overlord::Minion::collisions</a></div><div class="ttdeci">int collisions()</div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00060">minion.h:60</a></div></div>
 <div class="ttc" id="namespaceoverlord_html"><div class="ttname"><a href="namespaceoverlord.html">overlord</a></div><div class="ttdef"><b>Definition:</b> <a href="minion_8h_source.html#l00010">minion.h:10</a></div></div>
@@ -299,7 +314,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 22 2019 17:30:43 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 23 2019 05:25:34 for My Elma Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

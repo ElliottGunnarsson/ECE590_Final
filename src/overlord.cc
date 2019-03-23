@@ -24,22 +24,34 @@ Overlord::Overlord(
     start_color();
     init_pair(1, COLOR_WHITE, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
+    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
 };
 
 void Overlord::draw_pen(){
 //50 by 90
 for (int i = 0; i<90;i++ ){mvprintw(0,i,"=");mvprintw(50,i,"=");}
 for (int i = 0; i<50;i++ ){mvprintw(i,0,"||");mvprintw(i,90,"||");}
+
+string line1 = "The bunnies are running rampant!";
+string line2 = "Click on one and click away to separate them.";
+string line3 = "If you need to leave press 'Q'";
+string line4 = "For debug info press 7";
+
+mvprintw(12,95,line1.c_str());
+mvprintw(14,95,line2.c_str());
+mvprintw(40,95,line3.c_str());
+mvprintw(42,95,line4.c_str());
 }
 
 void Overlord::draw_minion(Minion& mn){
 int x = std::get<0>(mn.get_coords());
 int y = std::get<1>(mn.get_coords()); 
 
-if(_selection !=-1){
-    if(_minions[_selection]==&mn){
-        attron(COLOR_PAIR(2));
-    }
+
+if(mn.current().name() == "fighting"){
+    attron(COLOR_PAIR(2));
+}else if(mn.current().name() == "select"){
+    attron(COLOR_PAIR(3));
 }
 
 string line1 = "()()";
@@ -92,6 +104,8 @@ static int width = 100;
       }
     }
 
+    /*************   EDITORS     *******************/
+    //add key commands here
     switch ( c ) {            
         case 's':
             std::cout<<"pushed the s button\n";
@@ -135,7 +149,7 @@ static int width = 100;
         case 'o':emit(Event("travel_check"));break;
         case 'k':emit(Event("idle"));break;
         case 'l':emit(Event("travel"));break;
-           
+/*************   END EDITORS     *******************/
     }
 
 
@@ -153,21 +167,13 @@ static int width = 100;
     }
 
 
-    usleep(999);
+    usleep(9999);
 }
 
 
 void Overlord::handle_click(int x, int y){
-
-// get xy for who is selected
-// check if anyone is in area
 select_minion(x,y);
 
-//if it's your guy then select it
-//otherwise move to it
-if(_selection !=-1){
-    _minions[_selection]->set_target(make_tuple(x,y));
-}
 
 
 }
@@ -177,15 +183,23 @@ void Overlord::select_minion(int x,int y){
             
                 int ix = std::get<0>(_minions[i]->get_coords());
                 int iy = std::get<1>(_minions[i]->get_coords());
-                if((ix<x) & (x<ix+_minions[i]->get_size_width())){
-                    if(iy<y & (y<iy+_minions[i]->get_size_height())){
+                if((ix<x) & (x<ix+_minions[i]->get_size_width()) & //){
+                    (iy<y & (y<iy+_minions[i]->get_size_height()))){
                         if(_selection != -1){
                             _minions[_selection]->unselect();
                         }
                         _selection = i;
                         _minions[_selection]->select();
+                        emit(Event("idle_check"));
+                        emit(Event("travel_check"));
+                        emit(Event("fight_check"));
+                }else{
+                    if(_selection !=-1){
+                        _minions[_selection]->set_target(make_tuple(x,y));
                     }
+                    emit(Event("travel"));
                 }
+                
             
         }
 }

@@ -149,7 +149,22 @@ TEST(Minion_Basics,Collision) {
 }
 
 TEST(Minion_Basics,Move_Calls) { 
-    Minion elf(make_tuple(5,7));
+    Manager m;
+    Minion elf;
+    Minion goblin;
+    std::vector<Minion*> _minions = {&elf,
+                                    &goblin};
+
+    Overlord ov(_minions);
+    
+    elf.set_target(make_tuple(2,2));
+    goblin.set_target(make_tuple(30,30));
+
+    m.schedule(ov, 100_ms)
+     .schedule(elf, 100_ms)
+     .schedule(goblin, 100_ms)
+     .init()
+     .start();
 
     EXPECT_EQ(elf.get_move_calls(),0);
     elf.move_minion();

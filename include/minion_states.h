@@ -44,7 +44,7 @@ namespace overlord {
         //! called when entering Fighting state
         void entry(const Event&);
         //! called every update while in Fighting state
-        void during() {}        
+        void during() ;       
         //! called when exiting Fighting state    
         void exit(const Event&);
         Minion& minion();        
@@ -72,6 +72,19 @@ namespace overlord {
         //! called every update while in Colide state
         void during() {emit(Event("fight"));}            
         //! called when exiting Colide state
+        void exit(const Event&);
+        Minion& minion();        
+    };
+    //! the Idle_Select state for Minions
+    class Idle_Select : public State {        
+        public:
+        //! build a new Idle_Select state
+        Idle_Select() : State("idle_select") {}
+        //! called when entering Idle_Select state
+        void entry(const Event&);
+        //! called every update while in Idle_Select state
+        void during() {emit(Event("idle"));}            
+        //! called when exiting Idle_Select state
         void exit(const Event&);
         Minion& minion();        
     };
